@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhtar & Syifa Wedding</title>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- FOTNS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300;400;500&family=Tangerine:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- SIMPLYCOUNTDOWN -->
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
+    <script src="countdown/simplyCountdown.min.js"></script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <!-- MUSIC -->
+    <audio autoplay>
+      <source src="music/soundtract.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- HERO -->
+    <section class="hero cont">
+      <div class="main">
+        <h1>Muhtar & Syifa</h1>
+        <p>Akan melaksanakan pernikahan dalam:</p>
+        <div class="simply-countdown"></div>
+        <a href="#content" class="scroll">Lihat Undangan</a>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section id="content" class="content cont">
+      <div class="opening">
+        <h2>Assalamu'alaikum Wr. Wb.</h2>
+        <p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Dengan ini kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikaha kami.</p>
+        <h1>Muhtar Jamaludin</h1>
+        <p class="kel">Putra dari Bapak Maman & Ibu Nining</p>
+        <h1 class="dan">&</h1>
+        <h1>Neng Syifa Putriani Aziz</h1>
+        <p class="kel">Putri dari Bapak ------ & Ibu ------</p>
+      </div>
+      <div class="date">
+        <h2>Acara Pernikahan</h2>
+        <table>
+          <tr>
+            <td class="hari">Senin</td>
+            <td class="tanggal">25 <span>2023</span></td>
+            <td class="bulan">Desember</td>
+          </tr>
+        </table>
+        <p>07.00 - Selesai</p>
+        <p>Kp. Sindangsono, Sukamanah, Kec. Cigalontang, Kabupaten Tasikmalaya, Jawa Barat 46463</p>
+        <a href="https://maps.app.goo.gl/M4LppKkGEghUTQtb6" target="_blank">Lihat Alamat</a>
+      </div>
+      <div class="closing">
+        <p>Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada kami.</p>
+        <h3>Wassalamu'alaikum Wr. Wb.</h2>
+      </div>
+      <div class="congrats"  data-aos="fade-down">
+        <h2>Wishes</h2>
+        <div class="fade show my-alert" role="alert">
+          <span><strong>Pesan Terkirim!</strong> Terimakasih</span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+        </div>
+        <form name="wishes">
+          <div class="column">
+            <label for="name" class="form-label">Nama</label><br>
+            <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+          </div>
+          <div class="column">
+            <label for="name" class="form-label">Alamat</label><br>
+            <input type="text" class="form-control" id="alamat" aria-describedby="alamat" name="alamat" />
+          </div>
+          <div class="column">
+            <label for="pesan" class="form-label">Pesan</label><br>
+            <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
+          </div>
+          <div class="column">
+            <button type="submit" class="btn btn-kirim">Submit</button>
+            <button class="btn btn-load d-none" disabled>
+              <span role="status">Loading...</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>AMWedd.</span> All Right Reserved.
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const animate=document.querySelectorAll('h1, h2, h3, p, .date a, td');
+      animate.forEach((text, i) => {
+        text.dataset.aos = 'fade-down';
+      })
+
+      AOS.init({
+        offset: 70,
+        duration: 1500,
+      });
+    </script>
+  </body>
+</html>

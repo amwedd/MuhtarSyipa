@@ -1,0 +1,295 @@
+/* GENERAL */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-image: url(img/bodybg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+* h1 {
+  font-family: "Tangerine", cursive;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+* h2 {
+  font-size: 1.2rem;
+}
+* a {
+  font-size: 0.8rem;
+}
+
+.cont {
+  padding-inline: 150px;
+}
+
+/* HERO */
+.hero,
+.content {
+  margin: auto;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  background-image: url(img/hero.jpg);
+  height: 100vh;
+}
+.hero .main {
+  text-align: center;
+}
+.main h1 {
+  font-size: 4rem;
+  margin-bottom: 0.2em;
+}
+.main p {
+  margin-bottom: 1em;
+}
+.main a {
+  background-color: #d47f81;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  left: calc(50% - 58px);
+  bottom: 10vh;
+  color: white;
+  text-decoration: none;
+}
+
+/* CONTENT */
+.content {
+  background-image: url(img/background.jpg);
+  flex-direction: column;
+}
+.opening {
+  margin-top: 70px;
+  text-align: center;
+}
+.opening h2 {
+  margin-bottom: 1em;
+}
+.opening p {
+  font-size: 1rem;
+  margin-bottom: 3em;
+}
+.opening .kel {
+  margin-bottom: 0;
+}
+.opening .dan {
+  font-size: 5rem;
+  margin: 0.3em 0;
+}
+
+/* DATE */
+.date {
+  margin-top: 100px;
+  text-align: center;
+}
+.date h2 {
+  margin-bottom: 1.2em;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto 1em;
+}
+table tr td {
+  font-size: 1.2rem;
+}
+table .hari {
+  letter-spacing: 3px;
+  padding-left: 15px;
+}
+table .tanggal {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0 10px;
+}
+table .tanggal span {
+  display: block;
+  margin-top: -5px;
+  font-weight: lighter;
+}
+table .hari,
+table .bulan {
+  padding-bottom: 15px;
+}
+.date p {
+  font-size: 1rem;
+  margin-bottom: 1.2em;
+}
+.date a {
+  background-color: #d47f81;
+  padding: 7px 10px;
+  border-radius: 5px;
+}
+
+/* CLOSING */
+.closing {
+  margin-top: 70px;
+  text-align: center;
+}
+.closing p {
+  margin-bottom: 1em;
+}
+
+/* CONGRATULATION */
+.congrats {
+  margin-top: 70px;
+  margin-bottom: 100px;
+  width: 90%;
+  padding: 20px 10%;
+  background-color: #bc998b;
+  text-align: center;
+  border-radius: 10px;
+}
+.congrats .my-alert {
+  background-color: rgba(120, 230, 191, 0.7);
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  margin-top: 2em;
+  line-height: 30px;
+  display: none;
+}
+.congrats .d-flex {
+  display: flex;
+}
+.congrats .my-alert button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.column {
+  text-align: start;
+  margin: 0.6em 0;
+}
+.column label {
+  margin: 0;
+}
+.column input {
+  width: 100%;
+  height: 28px;
+  color: black;
+  border-radius: 3px;
+  border: 1px solid gray;
+}
+.column textarea {
+  width: 100%;
+  height: 100px;
+  color: black;
+  border-radius: 5px;
+}
+.column .btn-kirim {
+  background-color: #d47f81;
+  border: none;
+  padding: 7px 0;
+  width: 100%;
+  font-size: 0.8rem;
+}
+.column .btn-load {
+  background-color: #964547;
+  border: none;
+  padding: 7px 0;
+  width: 100%;
+}
+.d-none {
+  display: none;
+}
+
+/* FOOTER */
+footer {
+  max-width: 100wv;
+  background-color: #bc998b;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+footer span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* RESVOSIVE BREAKPOINT */
+@media (min-width: 800px) {
+  * {
+    font-size: 20px;
+  }
+  * h1 {
+    font-size: 4rem;
+  }
+  .main h1 {
+    font-size: 5rem;
+    margin-bottom: 0.2em;
+  }
+  .cont {
+    padding-inline: 20vw;
+  }
+  .congrats {
+    max-width: 700px;
+  }
+  .column input {
+    height: 40px;
+  }
+  .column textarea {
+    height: 200px;
+  }
+  .congrats .my-alert {
+    height: 40px;
+    line-height: 40px;
+  }
+  table .hari {
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 800px) {
+  * {
+    font-size: 18px;
+  }
+  .cont {
+    padding-inline: 15vmin;
+  }
+  table .hari {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  * {
+    font-size: 15px;
+  }
+  .hero,
+  .content {
+    width: 100vw;
+  }
+  .cont {
+    padding-inline: 5vw;
+  }
+}
+
+@media (max-width: 360px) {
+  * {
+    font-size: 12px;
+  }
+
+  .main h1 {
+    font-size: 3rem;
+  }
+  table .hari,
+  table .bulan {
+    padding-bottom: 5px;
+  }
+}

@@ -1,0 +1,54 @@
+.simply-countdown {
+  overflow: hidden;
+  display: table;
+  font-family: "Arial", sans-serif;
+  margin: auto;
+}
+.simply-countdown > .simply-section {
+  width: 60px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin: 10px;
+  background-color: rgba(32, 28, 26, 0.6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+}
+.simply-countdown > .simply-section .simply-amount,
+.simply-countdown > .simply-section .simply-word {
+  display: block;
+  text-align: center;
+}
+
+.simply-countdown > .simply-section .simply-amount {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 500px) {
+  .simply-countdown > .simply-section {
+    width: 13vw;
+    height: 100px;
+  }
+}
+
+@media (min-width: 800px) {
+  .simply-countdown > .simply-section {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 360px) {
+  .simply-countdown > .simply-section {
+    width: 15vw;
+    height: 60px;
+  }
+  .simply-countdown > .simply-section .simply-amount {
+    font-size: 1rem;
+  }
+  .simply-countdown > .simply-section .simply-word {
+    font-size: 0.8rem;
+  }
+}
