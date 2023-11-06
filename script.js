@@ -2,8 +2,8 @@
 simplyCountdown(".simply-countdown", {
   year: 2023, // required
   month: 12, // required
-  day: 25, // required
-  hours: 7, // Default is 0 [0-23] integer
+  day: 21, // required
+  hours: 9, // Default is 0 [0-23] integer
   words: {
     //words displayed into the countdown
     days: { singular: "hari", plural: "hari" },
@@ -44,4 +44,21 @@ form.addEventListener("submit", (e) => {
 
 btnClose.addEventListener("click", function () {
   myAlert.classList.toggle("d-flex");
+});
+
+// AUDIO
+var audio = document.getElementById("myAudio");
+
+// Minta izin dari pengguna sebelum memainkan musik
+document.addEventListener("click", function () {
+  if (audio.paused) {
+    if (confirm("Do you want to play the music?")) {
+      audio.play();
+    }
+  }
+});
+
+// Atur pemutaran musik secara otomatis saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function () {
+  audio.play();
 });

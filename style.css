@@ -116,11 +116,14 @@ table .tanggal {
   font-size: 2rem;
   font-weight: bold;
   padding: 0 10px;
+  letter-spacing: 0.2em;
 }
 table .tanggal span {
   display: block;
   margin-top: -5px;
   font-weight: lighter;
+  letter-spacing: 0;
+  padding-right: 5px;
 }
 table .hari,
 table .bulan {
@@ -148,7 +151,6 @@ table .bulan {
 /* CONGRATULATION */
 .congrats {
   margin-top: 70px;
-  margin-bottom: 100px;
   width: 90%;
   padding: 20px 10%;
   background-color: #bc998b;
@@ -183,13 +185,14 @@ table .bulan {
   height: 28px;
   color: black;
   border-radius: 3px;
-  border: 1px solid gray;
+  border: 1px solid #fff;
 }
 .column textarea {
   width: 100%;
   height: 100px;
   color: black;
   border-radius: 5px;
+  border: 1px solid #fff;
 }
 .column .btn-kirim {
   background-color: #d47f81;
@@ -208,6 +211,36 @@ table .bulan {
   display: none;
 }
 
+/* CONTACT */
+.contact {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  width: 90%;
+  padding: 20px 10% 40px;
+  background-color: #bc998b;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+.insta {
+  margin-top: 1em;
+  width: 100%;
+  height: 40px;
+  color: black;
+  border-radius: 3px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.insta img {
+  height: 50%;
+}
+.insta span {
+  color: black;
+  margin-left: 10px;
+}
+
 /* FOOTER */
 footer {
   max-width: 100wv;
@@ -217,7 +250,7 @@ footer {
   font-size: 0.8rem;
   margin: 0 auto;
 }
-footer span {
+footer a {
   font-size: 0.8rem;
   font-weight: bold;
 }
@@ -237,7 +270,8 @@ footer span {
   .cont {
     padding-inline: 20vw;
   }
-  .congrats {
+  .congrats,
+  .contact {
     max-width: 700px;
   }
   .column input {
@@ -252,6 +286,9 @@ footer span {
   }
   table .hari {
     padding-left: 25px;
+  }
+  .insta {
+    height: 50px;
   }
 }
 
