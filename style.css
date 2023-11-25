@@ -26,6 +26,9 @@ body {
 * a {
   font-size: 0.8rem;
 }
+.noscroll {
+  overflow: hidden;
+}
 
 .cont {
   padding-inline: 150px;
@@ -68,20 +71,37 @@ body {
   text-decoration: none;
 }
 
+/* MUKODIMAH */
+.mukodimah {
+  background-image: url(img/background2.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.mukodimah h2 {
+  font-size: 2rem;
+}
+
 /* CONTENT */
 .content {
   background-image: url(img/background.jpg);
   flex-direction: column;
 }
 .opening {
-  margin-top: 70px;
+  margin-top: 100px;
   text-align: center;
 }
 .opening h2 {
   margin-bottom: 1em;
+  letter-spacing: 2px;
 }
 .opening p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-bottom: 3em;
 }
 .opening .kel {
@@ -92,13 +112,32 @@ body {
   margin: 0.3em 0;
 }
 
+/* IMAGE UTAMA */
+.wed-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px 0;
+}
+.wed-img img {
+  width: 20%;
+  border-radius: 5px;
+}
+.wed-img i {
+  margin: 0 20px;
+}
+
 /* DATE */
 .date {
-  margin-top: 100px;
+  margin-top: 150px;
   text-align: center;
 }
 .date h2 {
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
+}
+.date .open {
+  margin-bottom: 2.5em;
 }
 table {
   border-collapse: collapse;
@@ -139,15 +178,6 @@ table .bulan {
   border-radius: 5px;
 }
 
-/* CLOSING */
-.closing {
-  margin-top: 70px;
-  text-align: center;
-}
-.closing p {
-  margin-bottom: 1em;
-}
-
 /* CONGRATULATION */
 .congrats {
   margin-top: 70px;
@@ -184,6 +214,7 @@ table .bulan {
   width: 100%;
   height: 28px;
   color: black;
+  background-color: white;
   border-radius: 3px;
   border: 1px solid #fff;
 }
@@ -211,16 +242,57 @@ table .bulan {
   display: none;
 }
 
+/* GIFT */
+.gift {
+  margin-top: 150px;
+  width: 90%;
+  padding: 20px 10% 40px;
+  background-color: #bc998b;
+  text-align: center;
+  border-radius: 10px;
+}
+.gift > p {
+  margin-top: 1em;
+  font-size: 0.8rem;
+  margin-bottom: 1em;
+}
+.bank {
+  margin-top: 2em;
+  width: 100%;
+  color: black;
+  border-radius: 3px;
+  background-color: #ffffff;
+  padding: 0.8em;
+}
+.bank .blogo {
+  text-align: end;
+}
+.bank .blogo img {
+  width: 50%;
+}
+.copyTextContainer {
+  text-align: start;
+}
+.copyTextContainer p,
+.copyTextContainer span {
+  color: black;
+}
+.copyTextContainer .copy {
+  margin-left: 10px;
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
+}
+
 /* CONTACT */
 .contact {
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 100px;
   width: 90%;
   padding: 20px 10% 40px;
   background-color: #bc998b;
   text-align: center;
   border-radius: 10px;
-  margin-bottom: 100px;
 }
 .insta {
   margin-top: 1em;
@@ -255,24 +327,86 @@ footer a {
   font-weight: bold;
 }
 
+/* MUSIC */
+.audio-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  cursor: pointer;
+  color: white;
+  animation: rotate 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.audio-icon-wrapper i {
+  font-size: 3.5rem;
+}
+
+/* COVER */
+.cover {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(img/cover.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.cover h4 {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.3em;
+  font-weight: 500;
+}
+.cover button {
+  margin-top: 50px;
+  background-color: #d47f81;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(350deg);
+  }
+}
+
 /* RESVOSIVE BREAKPOINT */
 @media (min-width: 800px) {
   * {
     font-size: 20px;
   }
   * h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .main h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 0.2em;
   }
   .cont {
     padding-inline: 20vw;
   }
-  .congrats,
-  .contact {
+  .opening,
+  .date {
     max-width: 700px;
+  }
+  .congrats,
+  .contact,
+  .gift {
+    max-width: 600px;
   }
   .column input {
     height: 40px;
@@ -306,7 +440,7 @@ footer a {
 
 @media (max-width: 500px) {
   * {
-    font-size: 15px;
+    font-size: 12px;
   }
   .hero,
   .content {

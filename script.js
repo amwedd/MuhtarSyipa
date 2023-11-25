@@ -46,19 +46,90 @@ btnClose.addEventListener("click", function () {
   myAlert.classList.toggle("d-flex");
 });
 
+// DISABLE SCROLL
+// const rootElement = document.querySelector(":root");
+
+// function disableScroll() {
+//   scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//   scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+//   window.onscroll = function () {
+//     window.scrollTo(scrollTop, scrollLeft);
+//   };
+
+//   rootElement.style.scrollBehavior = "auto";
+// }
+
+// function enableScroll() {
+//   window.onscroll = function () {};
+//   rootElement.style.scrollBehavior = "smooth";
+//   playAudio();
+// }
+
+// function playAudio() {
+//   const song = document.querySelector("#song");
+//   song.play();
+// }
+
 // AUDIO
-var audio = document.getElementById("myAudio");
+function showInvitation() {
+  // Sembunyikan cover
+  document.getElementById("coverSection").style.display = "none";
 
-// Minta izin dari pengguna sebelum memainkan musik
-document.addEventListener("click", function () {
-  if (audio.paused) {
-    if (confirm("Do you want to play the music?")) {
-      audio.play();
-    }
-  }
-});
+  // Tampilkan ikon audio
+  document.querySelector(".audio-icon-wrapper i").style.display = "block";
 
-// Atur pemutaran musik secara otomatis saat halaman dimuat
-document.addEventListener("DOMContentLoaded", function () {
+  // Mulai pemutaran musik
   audio.play();
-});
+  audio.volume = 0.3;
+  body.classList.remove("noscroll");
+}
+
+const audio = document.getElementById("song");
+const audioIcon = document.getElementById("audioIcon");
+const body = document.querySelector("body");
+
+function togglePlayPause() {
+  if (audio.paused) {
+    audio.play();
+    audioIcon.classList.remove("bi-pause-circle");
+    audioIcon.classList.add("bi-disc");
+  } else {
+    audio.pause();
+    audioIcon.classList.remove("bi-disc");
+    audioIcon.classList.add("bi-pause-circle");
+  }
+}
+// Tambahkan event listener untuk ikon audio
+audioIcon.addEventListener("click", togglePlayPause);
+
+// FITUR COPY TEXT
+function copyText(element) {
+  /* Get the text content from the sibling with class "copyText" */
+  var textToCopy = element.previousElementSibling.innerText;
+
+  /* Create a temporary textarea element to copy the text */
+  var tempTextArea = document.createElement("textarea");
+  tempTextArea.value = textToCopy;
+  document.body.appendChild(tempTextArea);
+
+  /* Select the text in the textarea */
+  tempTextArea.select();
+  tempTextArea.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text to the clipboard */
+  document.execCommand("copy");
+
+  /* Remove the temporary textarea */
+  document.body.removeChild(tempTextArea);
+
+  /* Provide feedback to the user (optional) */
+  alert("Teks berhasil di-copy: " + textToCopy);
+}
+
+// NAMA TAMU
+const urlParams = new URLSearchParams(window.location.search);
+const tamu = urlParams.get("an");
+
+const namaContainer = document.querySelector(".cover h4 span");
+namaContainer.innerText = tamu;
