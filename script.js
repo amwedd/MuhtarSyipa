@@ -81,7 +81,7 @@ function showInvitation() {
 
   // Mulai pemutaran musik
   audio.play();
-  audio.volume = 0.3;
+  audio.volume = 0.8;
   body.classList.remove("noscroll");
 }
 
