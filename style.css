@@ -332,7 +332,7 @@ footer a {
   width: 3.5rem;
   height: 3.5rem;
   position: fixed;
-  bottom: 3rem;
+  bottom: 4rem;
   right: 2rem;
   cursor: pointer;
   color: white;
@@ -373,6 +373,61 @@ footer a {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
+}
+
+/* GALLERY */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SLIDER */
+.slider-container {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 350%; /* 4 gambar x 100% */
+  transition: transform 0.5s ease;
+  justify-content: space-evenly;
+}
+
+.slide {
+  /* justify-content: space-evenly; */
+  display: flex;
+  padding: 1%;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.slider-controls img {
+  width: 20px;
+  border: none;
+  cursor: pointer;
+  filter: brightness(100);
+  mix-blend-mode: difference;
+}
+.slider-controls button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.slide img {
+  width: 100%;
+  height: auto;
 }
 
 @keyframes rotate {
@@ -424,6 +479,12 @@ footer a {
   .insta {
     height: 50px;
   }
+  .slid-1 {
+    margin-left: 6vw;
+  }
+  .slider-container {
+    max-width: 700px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -435,6 +496,9 @@ footer a {
   }
   table .hari {
     padding-left: 20px;
+  }
+  .slid-1 {
+    margin-left: 11vw;
   }
 }
 
@@ -448,6 +512,13 @@ footer a {
   }
   .cont {
     padding-inline: 5vw;
+  }
+  .slid-1 {
+    margin-left: 13vw;
+  }
+  .main a {
+    bottom: 15vh;
+    left: calc(50% - 50px);
   }
 }
 

@@ -46,31 +46,6 @@ btnClose.addEventListener("click", function () {
   myAlert.classList.toggle("d-flex");
 });
 
-// DISABLE SCROLL
-// const rootElement = document.querySelector(":root");
-
-// function disableScroll() {
-//   scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//   scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-//   window.onscroll = function () {
-//     window.scrollTo(scrollTop, scrollLeft);
-//   };
-
-//   rootElement.style.scrollBehavior = "auto";
-// }
-
-// function enableScroll() {
-//   window.onscroll = function () {};
-//   rootElement.style.scrollBehavior = "smooth";
-//   playAudio();
-// }
-
-// function playAudio() {
-//   const song = document.querySelector("#song");
-//   song.play();
-// }
-
 // AUDIO
 function showInvitation() {
   // Sembunyikan cover
@@ -81,7 +56,6 @@ function showInvitation() {
 
   // Mulai pemutaran musik
   audio.play();
-  audio.volume = 0.8;
   body.classList.remove("noscroll");
 }
 
@@ -92,16 +66,65 @@ const body = document.querySelector("body");
 function togglePlayPause() {
   if (audio.paused) {
     audio.play();
+    fadeInAudio();
     audioIcon.classList.remove("bi-pause-circle");
     audioIcon.classList.add("bi-disc");
   } else {
-    audio.pause();
+    fadeOutAudio();
     audioIcon.classList.remove("bi-disc");
     audioIcon.classList.add("bi-pause-circle");
   }
 }
+
+function fadeInAudio() {
+  // Setel volume menjadi 0
+  audio.volume = 0;
+  // Mulai animasi fade in
+  let volume = 0.1; // Nilai awal volume
+  const fadeInInterval = setInterval(function () {
+    if (volume < 1) {
+      volume += 0.1;
+      audio.volume = volume;
+    } else {
+      clearInterval(fadeInInterval);
+    }
+  }, 100);
+}
+
+function fadeOutAudio() {
+  // Mulai animasi fade out
+  let volume = 1; // Nilai awal volume
+  const fadeOutInterval = setInterval(function () {
+    if (volume > 0) {
+      volume -= 0.1;
+      audio.volume = volume;
+    } else {
+      audio.pause();
+      clearInterval(fadeOutInterval);
+    }
+  }, 100);
+}
+
 // Tambahkan event listener untuk ikon audio
 audioIcon.addEventListener("click", togglePlayPause);
+
+// Tambahkan event listener untuk deteksi perubahan visibility
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+    // Tab tidak terlihat, jadi fade out audio
+    if (!audio.paused) {
+      fadeOutAudio();
+    }
+  } else {
+    // Tab terlihat kembali, jadi mainkan audio jika sebelumnya sedang diputar
+    if (audio.paused && !audio.ended) {
+      audio.play();
+      fadeInAudio();
+      audioIcon.classList.remove("bi-pause-circle");
+      audioIcon.classList.add("bi-disc");
+    }
+  }
+});
 
 // FITUR COPY TEXT
 function copyText(element) {
@@ -133,3 +156,35 @@ const tamu = urlParams.get("an");
 
 const namaContainer = document.querySelector(".cover h4 span");
 namaContainer.innerText = tamu;
+
+// SLIDER
+const slider = document.querySelector(".slider");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+
+let currentIndex = 0;
+const totalSlides = 5; // Ubah jumlah total gambar sesuai dengan jumlah gambar yang Anda miliki
+
+function showSlide(index) {
+  if (index < 0) {
+    index = totalSlides - 1;
+  } else if (index >= totalSlides) {
+    index = 0;
+  }
+  currentIndex = index;
+  slider.style.transform = `translateX(-${currentIndex * (95 / totalSlides)}%)`;
+
+  // Mengaktifkan/menonaktifkan tombol "Sebelumnya" dan "Berikutnya" sesuai dengan indeks saat ini
+  prevButton.disabled = currentIndex === 0;
+  nextButton.disabled = currentIndex === totalSlides - 1;
+}
+
+prevButton.addEventListener("click", () => {
+  showSlide(currentIndex - 1);
+});
+
+nextButton.addEventListener("click", () => {
+  showSlide(currentIndex + 1);
+});
+
+showSlide(currentIndex);
