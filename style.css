@@ -181,6 +181,8 @@ table .bulan {
 /* CONGRATULATION */
 .congrats {
   margin-top: 70px;
+  height: 100vh;
+  overflow-y: auto;
   width: 90%;
   padding: 20px 10%;
   background-color: #bc998b;
